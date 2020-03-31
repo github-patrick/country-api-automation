@@ -14,11 +14,6 @@ public class AppTest
     public void shouldAnswerWithTrue()
     {
         assertFalse(Boolean.FALSE);
-        assertTrue(Boolean.TRUE);
-    }
-
-    @Test
-    public void shouldPass() {
-        assertFalse(2 > 3);
+        assertFalse(Boolean.FALSE);
     }
 }
