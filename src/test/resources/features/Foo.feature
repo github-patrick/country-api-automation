@@ -1,3 +1,4 @@
+@HealthCheck
 Feature: Foo Bar
 
   Scenario: Foo test
