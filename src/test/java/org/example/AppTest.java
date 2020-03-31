@@ -14,6 +14,7 @@ public class AppTest
     public void shouldAnswerWithTrue()
     {
         assertFalse(Boolean.FALSE);
+        assertTrue(Boolean.TRUE);
     }
 
     @Test
