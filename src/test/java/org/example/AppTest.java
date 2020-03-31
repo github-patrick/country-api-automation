@@ -15,5 +15,6 @@ public class AppTest
     {
         assertFalse(Boolean.FALSE);
         assertFalse(Boolean.FALSE);
+        assertTrue(Boolean.TRUE);
     }
 }
