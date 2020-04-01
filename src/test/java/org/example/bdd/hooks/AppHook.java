@@ -19,6 +19,7 @@ public class AppHook {
 
     @After
     public void tearDown(Scenario scenario) {
+        System.out.println(scenario.getUri());
         System.out.println("Executing the after scenario block");
     }
 
