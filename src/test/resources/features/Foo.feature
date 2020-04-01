@@ -1,3 +1,4 @@
+# Cucumber annotation that denotes a tag
 @HealthCheck
 Feature: Foo Bar
 
