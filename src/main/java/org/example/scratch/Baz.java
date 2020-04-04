@@ -1,5 +1,6 @@
 package org.example.scratch;
 
+@FunctionalInterface
 public interface Baz {
     void move();
 

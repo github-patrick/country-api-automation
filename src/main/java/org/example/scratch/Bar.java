@@ -36,6 +36,12 @@ public class Bar extends Foo implements Baz {
         System.out.println(bar.hashCode());
         System.out.println(bar.equals(bar2));
 
+        Baz baz =  ()-> System.out.println("move it!");
+
+        Bar barter = new Bar();
+        barter.move();
+        baz.move();
+
     }
 
 }

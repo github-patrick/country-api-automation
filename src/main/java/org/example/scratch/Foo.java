@@ -1,10 +1,18 @@
 package org.example.scratch;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.ToString;
+
+@ToString
 public class Foo {
 
     // Access modifier private used to encapsulate the objects state.
     private static int planetCount;
+
+    @Getter
     boolean drivingLicenceOwner;
+
     protected String referenceId;
     private String name;
     private int age;
