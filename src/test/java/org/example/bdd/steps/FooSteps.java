@@ -1,6 +1,5 @@
 package org.example.bdd.steps;
 
-import io.cucumber.datatable.DataTable;
 import io.cucumber.java.BeforeStep;
 import io.cucumber.java.DataTableType;
 import io.cucumber.java.Scenario;
@@ -10,7 +9,6 @@ import io.cucumber.java.en.When;
 import org.example.bdd.Context;
 import org.example.domain.Film;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.annotation.DirtiesContext;
 
 import java.util.List;
 import java.util.Map;
@@ -33,6 +31,11 @@ public class FooSteps {
                 entry.get("title"),
                 Integer.parseInt(entry.get("release_date"))
         );
+    }
+
+    @Given("I have a film")
+    public void i_have_a_film(List<Film> films) {
+        films.forEach(film -> System.out.println(film.toString()));
     }
 
     @BeforeStep
@@ -78,13 +81,6 @@ public class FooSteps {
     public void should_I_get(Integer int1) {
 
     }
-
-    @Given("I have a film")
-    public void i_have_a_film(List<Film> films) {
-
-        films.forEach(film -> System.out.println(film.toString()));
-    }
-
 
 
 }
