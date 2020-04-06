@@ -1,5 +1,6 @@
 package org.example.bdd.steps;
 
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -7,6 +8,7 @@ import io.restassured.authentication.AuthenticationScheme;
 import io.restassured.authentication.BasicAuthScheme;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.filter.log.LogDetail;
+import io.restassured.http.ContentType;
 import io.restassured.internal.http.AuthConfig;
 import io.restassured.internal.http.HTTPBuilder;
 import io.restassured.path.json.JsonPath;
@@ -40,6 +42,16 @@ public class GetCountrySteps {
         apiContext.getRequestSpecBuilder().setUrlEncodingEnabled(true);
     }
 
+    @Given("I request that my response is in xml")
+    public void i_request_that_my_response_is_in_xml() {
+        apiContext.getRequestSpecBuilder().setAccept(ContentType.XML);
+    }
+
+    @Given("I request that my response is in pdf")
+    public void i_request_that_my_response_is_in_pdf() {
+        apiContext.getRequestSpecBuilder().setAccept("application/pdf");
+    }
+
     @When("I make a request to get its details")
     public void i_make_a_request_to_get_its_details() {
         apiContext.setResponse(CountryUtils.getCountry(apiContext.getRequestSpecBuilder().build()));
@@ -71,6 +83,12 @@ public class GetCountrySteps {
     @Then("the schema is correct")
     public void the_schema_is_correct() {
         apiContext.getResponse().then().body(matchesJsonSchemaInClasspath("get-country-schema.json"));
+    }
+
+    @Then("I should see a total count of {int}")
+    public void i_should_see_a_total_count_of(Integer count) {
+        CountryDto countryDto = apiContext.getResponse().then().extract().as(CountryDto.class);
+        assertThat(countryDto.getTotalCount(), equalTo(count));
     }
 
 }

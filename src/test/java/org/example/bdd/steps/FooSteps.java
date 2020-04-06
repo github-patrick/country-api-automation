@@ -1,8 +1,6 @@
 package org.example.bdd.steps;
 
-import io.cucumber.java.BeforeStep;
 import io.cucumber.java.DataTableType;
-import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
