@@ -17,6 +17,8 @@ import org.example.bdd.dtos.CountrySpecificDto;
 import org.example.bdd.utils.CountryUtils;
 import org.example.bdd.utils.HelperUtils;
 import org.example.bdd.utils.RestUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import static io.restassured.RestAssured.with;
@@ -28,7 +30,6 @@ public class GetCountrySteps {
 
     @Autowired
     private ApiContext apiContext;
-
 
 
     @Given("the country of interest is {string}")
@@ -71,7 +72,5 @@ public class GetCountrySteps {
     public void the_schema_is_correct() {
         apiContext.getResponse().then().body(matchesJsonSchemaInClasspath("get-country-schema.json"));
     }
-
-
 
 }

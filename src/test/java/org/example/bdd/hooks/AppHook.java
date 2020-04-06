@@ -5,24 +5,24 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.restassured.RestAssured;
+import lombok.extern.slf4j.Slf4j;
 import org.example.bdd.config.TestConfig;
 import org.example.bdd.constants.Constants;
 import org.springframework.test.context.ContextConfiguration;
 
 @ContextConfiguration(classes = TestConfig.class)
+@Slf4j
 public class AppHook {
-
 
     @Before
     public void setUp() {
-        System.out.println("Executing  the before scenario block");
+        log.info("Executing hook before the test scenario");
     }
-
 
     @After
     public void tearDown(Scenario scenario) {
-        System.out.println(scenario.getUri());
-        System.out.println("Executing the after scenario block");
+        log.info(scenario.getId());
+        log.info("Executing hook after the test scenario");
     }
 
     @Before("@Api")
