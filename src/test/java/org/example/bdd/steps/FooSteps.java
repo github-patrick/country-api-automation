@@ -38,12 +38,6 @@ public class FooSteps {
         films.forEach(film -> System.out.println(film.toString()));
     }
 
-    @BeforeStep
-    public void beforeStep(Scenario scenario) {
-        if (scenario.isFailed()) {
-            System.out.println(scenario.getName());
-        }
-    }
 
     @Given("I am an object")
     public void i_am_an_object() {

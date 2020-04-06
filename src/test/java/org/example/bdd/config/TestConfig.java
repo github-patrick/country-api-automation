@@ -1,5 +1,7 @@
 package org.example.bdd.config;
 
+import io.restassured.builder.RequestSpecBuilder;
+import org.example.bdd.ApiContext;
 import org.example.bdd.Context;
 import org.example.domain.Film;
 import org.example.repository.FilmRepository;
@@ -33,5 +35,11 @@ public class TestConfig {
     @Scope(SCOPE_CUCUMBER_GLUE)
     public Context context() {
         return new Context();
+    }
+
+    @Bean
+    @Scope(SCOPE_CUCUMBER_GLUE)
+    public ApiContext apiContext() {
+        return new ApiContext(new RequestSpecBuilder());
     }
 }
