@@ -1,0 +1,95 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "IsSuccess": {
+      "type": "boolean"
+    },
+    "TotalCount": {
+      "type": "integer"
+    },
+    "Response": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "Name": {
+              "type": "string"
+            },
+            "Alpha2Code": {
+              "type": "string"
+            },
+            "Alpha3Code": {
+              "type": "string"
+            },
+            "NativeName": {
+              "type": "string"
+            },
+            "Region": {
+              "type": "string"
+            },
+            "SubRegion": {
+              "type": "string"
+            },
+            "Latitude": {
+              "type": "string"
+            },
+            "Longitude": {
+              "type": "string"
+            },
+            "Area": {
+              "type": "integer"
+            },
+            "NumericCode": {
+              "type": "integer"
+            },
+            "NativeLanguage": {
+              "type": "string"
+            },
+            "CurrencyCode": {
+              "type": "string"
+            },
+            "CurrencyName": {
+              "type": "string"
+            },
+            "CurrencySymbol": {
+              "type": "string"
+            },
+            "Flag": {
+              "type": "string"
+            },
+            "FlagPng": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "Name",
+            "Alpha2Code",
+            "Alpha3Code",
+            "NativeName",
+            "Region",
+            "SubRegion",
+            "Latitude",
+            "Longitude",
+            "Area",
+            "NumericCode",
+            "NativeLanguage",
+            "CurrencyCode",
+            "CurrencyName",
+            "CurrencySymbol",
+            "Flag",
+            "FlagPng"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "IsSuccess",
+    "UserMessage",
+    "TechnicalMessage",
+    "TotalCount",
+    "Response"
+  ]
+}
