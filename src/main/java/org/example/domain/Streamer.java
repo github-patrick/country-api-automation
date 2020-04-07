@@ -6,7 +6,6 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Streamer {
@@ -23,8 +22,8 @@ public class Streamer {
         int val = i + 100;
     }
 
-    public static void main(String[] args) throws Exception {
 
+    public static void main(String[] args) throws Exception {
 
         Streamer.getStream().
                 filter((s)-> s.length() < 5).
@@ -35,6 +34,7 @@ public class Streamer {
                 .average().orElseThrow(Exception::new);
 
         log.info(avg.toString());
+        System.out.println("hello");
 
     }
 }
