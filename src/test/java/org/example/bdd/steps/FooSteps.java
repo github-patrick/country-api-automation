@@ -1,8 +1,6 @@
 package org.example.bdd.steps;
 
-import io.cucumber.java.BeforeStep;
 import io.cucumber.java.DataTableType;
-import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -38,12 +36,6 @@ public class FooSteps {
         films.forEach(film -> System.out.println(film.toString()));
     }
 
-    @BeforeStep
-    public void beforeStep(Scenario scenario) {
-        if (scenario.isFailed()) {
-            System.out.println(scenario.getName());
-        }
-    }
 
     @Given("I am an object")
     public void i_am_an_object() {
