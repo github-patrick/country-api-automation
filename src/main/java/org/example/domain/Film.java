@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 @Getter
 @Setter
 @ToString
+@Builder
 public class Film {
 
     private String title;

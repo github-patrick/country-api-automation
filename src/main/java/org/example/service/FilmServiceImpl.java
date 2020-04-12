@@ -3,8 +3,11 @@ package org.example.service;
 import org.example.domain.Film;
 import org.example.repository.FilmRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Description;
 import org.springframework.stereotype.Service;
 
+@Description("Film service for adding films to the database")
+@Service
 public class FilmServiceImpl implements FilmService {
 
     private FilmRepository filmRepository;
